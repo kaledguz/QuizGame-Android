@@ -1,17 +1,20 @@
 package com.example.quizgame_android.model;
 
+import com.example.quizgame_android.controller.Controller;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Random;
 
 public class QuizGame {
-    
+
 	//specifications
+	private final Controller myController;
 	private String playerName;
     private int playerScore;
     private ArrayList<Question> myQuestions;
-    private Controller myController;
+    //private Controller myController;
 
     //implementation
     public QuizGame(Controller aController) {
@@ -22,11 +25,11 @@ public class QuizGame {
     	for (int i=0; i < 4; i++) {
     		int randomNumber = new Random().nextInt(26);
     		
-    		this.myQuestions.add(findQuestion(randomNumber));
+    		//this.myQuestions.add(findQuestion(randomNumber));
     	}
     }
 
-    public String getPlayerName() {
+	/*public String getPlayerName() {
         return playerName;
     }
 
@@ -114,5 +117,5 @@ public class QuizGame {
 			e.printStackTrace();
 		}
 		return Answers;
-	}
+	}*/
 }
